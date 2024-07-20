@@ -56,32 +56,29 @@ if ($showImage) {
     }
     imagePNG($image);
     imageDestroy($image);
-} else {
-    echo <<<END
+} else { ?>
 <html>
 <head>
-<title>Pickover dot structure: a=$a, b=$b</title>
+<title>Pickover dot structure: a=<?= $a ?>, b=<?= $b ?></title>
 </head>
 <body>
 <h1>Pickover dot structure</h1>
 <form method="GET">
-a: <input size="5" name="a" value="$a">
+a: <input size="5" name="a" value="<?= $a ?>">
 <br>
-b: <input size="5" name="b" value="$b">
+b: <input size="5" name="b" value="<?= $b ?>">
 <br>
-width: <input size="4" name="width" value="$width">
+width: <input size="4" name="width" value="<?= $width ?>">
 <br>
-height: <input size="4" name="height" value="$height">
+height: <input size="4" name="height" value="<?= $height ?>">
 <br>
-number of points: <input size="7" name="num_points" value="$numberOfPoints">
+number of points: <input size="7" name="num_points" value="<?= $numberOfPoints ?>">
 <br>
-<input type="Submit">
+<input type="submit">
 </form>
 <hr>
-<img src="pickover_dots.php?width=$width&height=$height&a=$a&b=$b&num_points=$numberOfPoints&image=true"
-  width="$width" height="$height" alt="Pickover dot structure">
+<img src="<?= "pickover_dots.php?width=$width&height=$height&a=$a&b=$b&num_points=$numberOfPoints&image=true" ?>"
+  width="<?= $width ?>" height="<?= $height ?>" alt="Pickover dot structure">
 </body>
 </html>
-END;
-
-}
+<?php } ?>
