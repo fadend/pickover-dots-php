@@ -7,7 +7,7 @@ declare(strict_types=1);
 
 function get_param(string $name, $default): string|int|float|bool
 {
-    return isset($_GET[$name]) ? $_GET[$name] : $default;
+    return $_GET[$name] ?? $default;
 }
 
 function get_int_param(string $name, int $default, int $min, int $max): int
